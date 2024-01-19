@@ -1,0 +1,17 @@
+/* .mobile-navbar {
+    display: none;
+  } */
+  
+  @media (max-width: ${({ theme }) => theme.media.mobile }) {
+    /* Your mobile styling here */
+    .menu-navbar,
+    .close-navbar {
+      display: inline-block;
+      z-index: 999;
+    }
+  
+    .know-button {
+      background-color: aliceblue;
+    }
+  }
+  
