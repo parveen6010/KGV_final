@@ -178,12 +178,12 @@ export const Home = () => {
   return (
     <div className="w-screen min-w-fit overflow-hidden ">
       {/* Hero section */}
-      <div className="hero flex flex-col h-screen justify-center items-center border-b-4 border-gray-500 " >
+      <div className="hero flex flex-col h-screen justify-center items-center" >
       <h1 className="text-4xl font-extrabold absolute top-32 font-serif text-center z-10" style={{ fontFamily: 'Anybody' }}>Welcome to the world of smart E-MOBILITY solution{" "}</h1>
          {/* <img src={bike5} className="scale-100 absolute top-30 z-30  "/> */}
          <img
           src={bike5}
-          className="z-40  lg:postion-relative lg:left-[200px] lg:scale-[1.2] md:pt-[50px] md:pl-[14%]  md:scale-[0.8] md:left-[-0.1%] bikeimg absolute top-[4%] left-[25%] scale-75 hover:scale-100 transition-all duration-500     "
+          className="z-40  lg:postion-relative lg:left-[270px] hover:lg:scale-[1.2] md:pt-[50px] md:pl-[14%]  md:scale-[0.8] md:left-[-0.1%] bikeimg absolute top-[4%] left-[20%] scale-75 hover:scale-100 transition-all duration-500     "
         />
          <div className=" h-full w-full  flex flex-col justify-center items-center sm:absolute sm:scale-[0.47] md:absolute md:scale-[0.55] lg:absolute lg:scale-[1]">
             <h1 className="relative top-[400px]  uppercase font-extrabold text-[12rem] text-[#55ff17db] opacity-20" style={{textShadow: "0px 3px 0px #b2a98f, 0px 14px 10px rgba(0,0,0,0.15), 0px 24px 2px rgba(0,0,0,0.1), 0px 34px 30px rgba(0,0,0,0.1)"}}>Sustainable</h1>
@@ -214,11 +214,11 @@ export const Home = () => {
          </div>
        </div>      
        {/* Key benefits sections */}
-       <div className="flex flex-col sm:h-[100%] sm:pt-[6%] sm:pb-[6%] w-full h-screen bg-[#55ff17db] relative z-10 p-5 md:h-100 ">
-       <div className=" sm:text-5xl font-extrabold text-5xl mb-10 text-black text-center md:text-center md:text-2xl">
+       <div className=" sm:h-[100%] sm:pt-[6%] sm:pb-[6%] w-full h-screen  bg-[#56e422c4]  relative z-10 p-5 md:h-100 ">
+       <div className=" md:text-[200%] sm:text-5xl font-extrabold text-5xl mb-10 text-black text-center md:text-center md:text-2xl">
            Key Benefits
          </div>
-         <div className="grid grid-rows-2 h-[70%] grid-flow-col gap-10  mx-auto max-w-[1204px] w-11/12 sm:grid-rows-3">
+         <div className=" flex flex-col items-center h-[80%] pb-5 mx-auto max-w-[1204px] w-11/12 md:flex-wrap md:flex-row md:grid md:grid-cols-2 gap-10 ">
            {keyBenefits.map((benefits, index) => {
              return <BenefitCard key={index} passed={benefits} />;
            })}

@@ -198,18 +198,15 @@ export const Product = () => {
       {/* hero page */}
       <div
         className=" md:h-[700px] bike-firstpage flex flex-col items-center justify-center  h-screen w-screen bg-gradient-radial from-[rgba(0,0,0,0.75)] via-gray-400 to-[rgba(0,0,0,0.75)]"
-        style={{
-          background:
-            "radial-gradient(ellipse at center, #D3D3D3, rgb(0 0 0 / 86%))",
-        }}
+
       >
         <h1 className="lg:pr-[20px] lg:scale-[1.2]  md:text-1/2 experince-text text-4xl font-extrabold absolute top-40 font-serif" style={{ fontFamily: 'Anybody' }}>Experience the power of future..</h1>
         <img
           src={bike5}
-          className="lg:postion-relative lg:left-[200px] lg:scale-[1.2] md:pt-[100px] md:pl-[14%]  md:scale-[0.8] md:left-[-0.1%] bikeimg absolute top-[4%] left-[25%] scale-75 hover:scale-100 transition-all duration-500     "
+          className="lg:postion-relative lg:left-[270px] hover:lg:scale-[1.2] md:pt-[100px] md:pl-[14%]  md:scale-[0.8] md:left-[-0.1%] bikeimg absolute top-[4%] left-[25%] scale-75 hover:scale-100 transition-all duration-500 z-20    "
         />
         <div
-          className=" Energyclass uppercase  font-extrabold text-transparent  text-[17rem] tracking-widest  bg-clip-text  bg-gradient-to-r from-[#56e422c4] via-[#56e422c4] to-[#56e422c4] bg-opacity-20 text_properties"
+          className=" sm:scale-[0.5] lg:scale-[1] md:scale-[0.7] Energyclass uppercase  font-extrabold text-transparent  text-[17rem] tracking-widest  bg-clip-text  bg-gradient-to-r from-[#56e422c4] via-[#56e422c4] to-[#56e422c4] bg-opacity-20 text_properties"
           style={{
             WebkitTextFillColor: "transparent",
             WebkitTextStrokeWidth: "2px",
@@ -219,7 +216,7 @@ export const Product = () => {
           ENERGY
         </div>
         <Link to={"/booking"}>
-        <button className="absolute top-[16%] md:text-[60%] sm:text-[60%] lg:text-[100%] text-white py-3 px-4  rounded-md bg-green-700 font-inter font-semibold text-[100%]">Buy Now</button>
+        <button className="absolute   sm:top-[11%] sm:left-[45%] sm:text-[0.5rem] md:text-[0.9] md:top-[18%]  lg:text-[1rem]  lg:left-[48%] lg:top-[18%]   bg-black font-semibold py-3 px-5 rounded  text-white">Buy Now</button>
         </Link>
       </div>
 
@@ -257,7 +254,7 @@ export const Product = () => {
       </div> */}
 
 
-      <div className=" sm:h-[100%] sm:pt-[6%] sm:pb-[6%] w-full h-screen  bg-[#55ff17db]  relative z-10 p-5 md:h-100 ">
+      <div className=" sm:h-[100%] sm:pt-[6%] sm:pb-[6%] w-full h-screen  bg-[#56e422c4]  relative z-10 p-5 md:h-100 ">
         <img
           src={goldenwave}
           className="w-full h-full  absolute scale-110 -z-10"
@@ -278,7 +275,7 @@ export const Product = () => {
 Our team of engineering excellence is also working on bringing up the system to each and every mode of transportation including 3-wheelers, cars, LMVs, LCVs, and even HCVs.
  */}
 
-      <div className="md:m-[5%] sm:pt-[6%] sm:pb-[6%] sm:mt-[6%] sm:mb-[6%] w-11/12 mx-auto max-w-[1204px] border-2 border-black  flex flex-col justify-center items-center gap-8 pt-7 mt-7 mb-7 pb-7 rounded-lg  ">
+      <div className=" w-full mx-auto max-w-[1204px] border-2 border-black  flex flex-col justify-center items-center gap-8 pt-7 mt-7 mb-7 pb-7 rounded-lg  ">
         <div className="uppercase font-bold text-3xl ">
           {" "}
           Comparison of motorcyles{" "}

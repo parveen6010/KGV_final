@@ -165,7 +165,7 @@ if (response.status === 200) {
           >
             <div className="flex w-full justify-between gap-9    ">
               <div className="flex flex-col">
-                <div className="flex gap-x-4">
+                <div className=" lg:flex gap-x-4">
                   <label className="mb-[1rem]">
                     <p className="mb-1 text-[0.875rem] font-semibold leading-[1.375rem] black">
                       First Name <sup className="text-pink-200">*</sup>
@@ -276,11 +276,11 @@ if (response.status === 200) {
 
             </div>
 
-            <div className="flex items-center justify-center ">
+            <div className="flex  items-center justify-center ">
             <div className="lg:mr-[15%] ">
         {/* Dropdown menu for amount selection */}
         <select
-          className="p-2 border border-gray-300 rounded"
+          className="  mt-2 p-2 border border-gray-300 rounded"
           value={selectedAmount}
           onChange={handleAmountChange}
         >
@@ -290,9 +290,8 @@ if (response.status === 200) {
       </div>
               <button
                 type="submit"
-                className="mt-6  rounded-[8px] bg-[#3EC70B] p-1 py-[5px] px-[14px] font-medium text-white"
+                className="mt-2  rounded-[8px] bg-[#3EC70B] p-1 py-[5px] px-[14px] font-medium text-white"
                 onClick={handleOnSubmit}
-              
               >
                    < Card amount={selectedAmount}   checkoutHandler ={checkoutHandler} />
               </button>

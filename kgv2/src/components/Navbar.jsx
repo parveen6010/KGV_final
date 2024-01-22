@@ -87,6 +87,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CgFormatJustify, CgCloseO } from 'react-icons/cg';
 import logo from '../resource/logokgv.jpg';
+import { Button2 } from './Button2';
 import './Phone.css';
 
 export const Navbar = () => {
@@ -111,9 +112,10 @@ export const Navbar = () => {
         
         <div className='md:mr-[10px] flex items-center justify-center gap-3'>
         <button  className='lg:text-[100%] md:text-[46%]  know-contact-button bg-[#52d831] p-2 rounded-md font-semibold'> <Link to={"/"} >Know More</Link></button>
-        <button  className='lg:text-[100%] md:text-[46%]  know-contact-button bg-[white] p-2  rounded-md font-semibold'><Link to={"/contactUs"}>Contact Us</Link></button>
+        <div class=" rounded-md bg-[#57E226] p-[2px] ">
+        <button  className='lg:text-[100%] md:text-[46%]  know-contact-button bg-[white]  p-1.5 rounded-md bg-white font-inter font-semibold'><Link to={"/contactUs"}>Contact Us</Link></button>
        </div>
-
+       </div>
        <div className="md:hidden flex items-center">
  
   {isMobileMenuOpen ?(

@@ -4,9 +4,10 @@ import { Button, Image, Text, VStack } from '@chakra-ui/react';
 const Card = ({ amount, img, checkoutHandler }) => {
   return (
     <VStack>
-     
-      <Text>{amount}</Text>
+       <div className='flex'>
+      <Text className='p-1' >{amount}</Text>
       <Button onClick={()=>checkoutHandler(amount)}>Buy Now</Button>
+      </div>
     </VStack>
   );
 }
