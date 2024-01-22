@@ -74,8 +74,8 @@ if (response.status === 200) {
       return;
     }
 
-     const {data:{key}} = await axios.get("http://localhost:5000/api/getkey")
-    const { data:{order}} = await axios.post("http://localhost:5000/api/checkout", {amount
+     const {data:{key}} = await axios.get("https://backendkgv.vercel.app/api/getkey")
+    const { data:{order}} = await axios.post("https://backendkgv.vercel.app/api/checkout", {amount
     })
 
   const options = {
@@ -86,7 +86,7 @@ if (response.status === 200) {
     description: "Test Transaction",
     image: "",
     order_id: order.id, 
-    callback_url: "http://localhost:5000/api/paymentverification",
+    callback_url: "https://backendkgv.vercel.app/api/paymentverification",
     "prefill":{
       "email": email,
       "firstname" :firstname,
