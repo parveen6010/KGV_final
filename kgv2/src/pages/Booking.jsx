@@ -13,6 +13,8 @@ import axios from "axios";
 import Card from "./Card.jsx"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SplendorBike from "../resource/splendor.png";
+import bike5 from '../resource/bike_main.png';
 
 export const Booking = () => {
   // student or instructor
@@ -25,8 +27,14 @@ export const Booking = () => {
     address: "",
     phonenumber:""
   })
+  const [selectedAmount, setSelectedAmount] = useState(50000);
 
   const { firstname, lastname, email, address, phonenumber } = formData
+
+  const handleAmountChange = (event) => {
+    setSelectedAmount(parseInt(event.target.value, 10));
+  };
+
 
   // Handle input fields, when some value changes
 
@@ -62,6 +70,9 @@ if (response.status === 200) {
   }
 
   const checkoutHandler = async (amount) => {
+    if (!firstname || !lastname || !email || !address || !phonenumber) {
+      return;
+    }
 
      const {data:{key}} = await axios.get("http://localhost:5000/api/getkey")
     const { data:{order}} = await axios.post("http://localhost:5000/api/checkout", {amount
@@ -71,11 +82,19 @@ if (response.status === 200) {
     key,
     amount: order.amount, 
     currency: "INR",
-    name: "XXXXXXXXXXX",
+    name: "TWI",
     description: "Test Transaction",
     image: "",
     order_id: order.id, 
     callback_url: "http://localhost:5000/api/paymentverification",
+    "prefill":{
+      "email": email,
+      "firstname" :firstname,
+       "lastname": lastname,
+        "email":email, 
+       "address":address,
+      "phonenumber" : phonenumber
+    },
     notes: {
       "email": email,
       "firstname" :firstname,
@@ -92,16 +111,7 @@ if (response.status === 200) {
 };
 
   const razor  = new window.Razorpay(options);
-  
-  // razor.on('payment.failed', function (response){
-  // alert(response.error.code);
-  // alert(response.error.description); 
-  // alert(response.error.source);
-  // alert(response.error.step);
-  // alert(response.error.reason);
-  // alert(response.error.eetadata.order_10);
-  //  alert(response.error.metadata.payment_id);
-  // });
+
 
   razor.on('payment.failed', function (response) {
     toast.error(`Error Code: ${response.error.code}`);
@@ -140,13 +150,20 @@ if (response.status === 200) {
       <img src={wave} className="absolute -z-10 " loading="lazy"/>
 
       <div className="flex-col  items-center  mx-auto max-w-[1204px] w-11/12">
-        <div class="flex   items-center justify-center py-10 rounded-lg bg-black bg-opacity-10    font-inter w-[90%]  mx-auto mt-14  px-20  ">
+        <div class="flex   items-center justify-between py-10 rounded-lg bg-black bg-opacity-10    font-inter w-[90%]  mx-auto mt-14  px-20  ">
           {/* Form */}
+          <div className=" h-full w-1/3 ">
+                 <img
+          src={bike5}
+          className="hover:scale-110"
+        />
+                
+              </div>
           <form
             onSubmit={handleOnSubmit}
-            className="flex flex-col h-full  gap-y-4 w-full  font-inter  "
+            className="flex flex-col h-full  gap-y-4 w-2/3  font-inter  "
           >
-            <div className="flex w-full justify-center gap-9    ">
+            <div className="flex w-full justify-between gap-9    ">
               <div className="flex flex-col">
                 <div className="flex gap-x-4">
                   <label className="mb-[1rem]">
@@ -234,39 +251,54 @@ if (response.status === 200) {
                     />
                   </div>
                 </label>
-              </div>
-
-              <div className=" h-full ">
-                <label className=" h-full">
+                <label className="relative mb-2">
                   <p className="mb-1 text-[0.875rem] font-semibold leading-[1.375rem] text-richblack-5">
-                    Phone No. <sup className="text-pink-200">*</sup>
+                    Phone no.<sup className="text-pink-200">*</sup>
                   </p>
-                  <input
-                required
-                type="text"
-                  name="phonenumber"  // Change this to "phonenumber"
-                 value={phonenumber}
-                 onChange={handleOnChange}
-                 placeholder="Phone No."
-    style={{
-        boxShadow: "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
-    }}
-    className="w-full h-56 rounded-[0.5rem] p-[12px] text-black outline-none"
-/>
+                  <div className="bg-white p-2 flex flex-row items-center mr-4  rounded-md">
+                    <FaLocationDot className="text-black mr-2" />
+                    <input
+                      required
+                      type="text"
+                      name="phonenumber"
+                      value={phonenumber}
+                      onChange={handleOnChange}
+                      placeholder="Phone No."
+                      style={{
+                        boxShadow:
+                          "inset 0px -1px 0px rgba(255, 255, 255, 0.18)",
+                      }}
+                      className="w-full rounded-[0.5rem]   p-1 pr-10 outline-none"
+                    />
+                  </div>
                 </label>
               </div>
+
             </div>
+
             <div className="flex items-center justify-center ">
-              {" "}
+            <div className="lg:mr-[15%] ">
+        {/* Dropdown menu for amount selection */}
+        <select
+          className="p-2 border border-gray-300 rounded"
+          value={selectedAmount}
+          onChange={handleAmountChange}
+        >
+          <option value={10000}>₹10,000</option>
+          <option value={50000}>₹50,000</option>
+        </select>
+      </div>
               <button
                 type="submit"
-                className="mt-6  rounded-[8px] bg-[#3EC70B] p-1 py-[12px] px-[14px] font-medium text-white"
+                className="mt-6  rounded-[8px] bg-[#3EC70B] p-1 py-[5px] px-[14px] font-medium text-white"
                 onClick={handleOnSubmit}
+              
               >
-                   < Card amount={100} checkoutHandler ={checkoutHandler} />
+                   < Card amount={selectedAmount}   checkoutHandler ={checkoutHandler} />
               </button>
             </div>
           </form>
+          
         </div>
       </div>
       <div className="mt-14 ">

@@ -1,17 +1,48 @@
-/* .mobile-navbar {
-    display: none;
-  } */
-  
-  @media (max-width: ${({ theme }) => theme.media.mobile }) {
-    /* Your mobile styling here */
-    .menu-navbar,
-    .close-navbar {
-      display: inline-block;
-      z-index: 999;
-    }
-  
-    .know-button {
-      background-color: aliceblue;
-    }
+/* phone.css */
+
+.mobile-navbar {
+  display: none;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+ 
+  .menu-navbar,
+  .close-navbar {
+    display: inline-block;
+    z-index: 999;
+  }
+
+  .know-contact-button {
+    font-size: 10px;
+  }
+   
+  .bike-firstpage{
+    height: 50%;
+  }
+  .experince-text{
+    display: flex;
+   font-size: 30px;
+   margin-top: -40px;
+   margin-left: 60px;
   }
   
+  .bikeimg{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-left: -120px;
+    margin-top: -20px;
+    width: 90%;
+  }
+ 
+  .classproduct{
+    height: 50%;
+  }
+  .imageclass{
+ width: 100%;
+ height: 120%;
+  }
+ 
+}
+
