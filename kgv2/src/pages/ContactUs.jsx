@@ -104,7 +104,7 @@ import axios from "axios"
             onSubmit={handleOnSubmit}
             className="flex flex-col h-full  gap-y-4 w-full  font-inter  "
           >
-            <div className="flex w-full justify-center gap-9    ">
+            <div className="  lg:flex w-full justify-center gap-9    ">
               <div className="flex flex-col">
                 <div className="flex gap-x-4">
                   <label className="mb-[1rem]">
