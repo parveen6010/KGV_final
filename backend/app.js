@@ -37,11 +37,13 @@ app.post("/register", async (req, resp) => {
     // Save to the database
     let contact = new Contact(req.body);
     let result = await contact.save();
-
+       console.log(req.body);
+       
     // Send email notification
     sendEmailNotification(req.body);
 
     resp.send(result);
+    console.log("done contact")
   } catch (error) {
     resp.status(500).send(error.message);
   }
@@ -52,17 +54,18 @@ app.post("/register", async (req, resp) => {
 // Function to send email notification
 
 function sendEmailNotification(formData) {
+  const {email} = formData;
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "Godaddy",
     auth: {
-      user: "parveenprajapati9310@gmail.com", // Update with your Gmail address
-      pass: "davajvjvmpyfjlri", // Update with your Gmail password
+      user: "team@kgvl.co.in", // Update with your Gmail address
+      pass: "Team@12345", // Update with your Gmail password
     },
   });
 
   const mailOptions = {
-    from: "parveenprajapati9310@gmail.com",
-    to: "parveenprajapati6010@gmail.com",
+    from: "team@kgvl.co.in",
+    to: email,
     subject: "New Registration",
     html: `<p>New registration details:</p>
            <p>Name: ${formData.name}</p>

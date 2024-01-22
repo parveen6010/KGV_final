@@ -74,27 +74,24 @@ export const paymentVerification = async (req, res) => {
                 razorpay_payment_id,
                 razorpay_signature
                 }); 
-           
-      // console.log(email);
-      // console.log(response.notes.lastname);
-      // console.log(response.notes.email);
-
+      
      
 
 
                 function sendEmailNotification() {
-                    const transporter = nodemailer.createTransport({
-                      service: "gmail",
-                      auth: {
-                        user: "parveenprajapati9310@gmail.com", // Update with your Gmail address
-                        pass: "davajvjvmpyfjlri", // Update with your Gmail password
-                      },
-                    });
+                  const transporter = nodemailer.createTransport({
+                    service: "Godaddy",
+                    auth: {
+                      user: "team@kgvl.co.in", // Update with your Gmail address
+                      pass: "Team@12345", // Update with your Gmail password
+                    },
+                  });
+                
                   
                    
                     const mailOptions = {
-                      from: "parveenprajapati9310@gmail.com",
-                      to: "parveenprajapati6010@gmail.com",
+                      from: "team@kgvl.co.in",
+                      to: "sales@kgvl.co.in",
                       subject: "Customer booking Detail",
                       html: `<p>New registration details11:</p>
                       <p>Name: ${firstname}</p>
@@ -108,8 +105,8 @@ export const paymentVerification = async (req, res) => {
                   
 
                     const mailOptions1 = {
-                        from: "parveenprajapati9310@gmail.com",
-                        to: "ishantsah58@gmail.com",
+                        from: "team@kgvl.co.in",
+                        to: email,
                         subject: "Customer booking Detail",
                         html: `<p>New registration details11:</p>
                         <p>Name: ${firstname}</p>
